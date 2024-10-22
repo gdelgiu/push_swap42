@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "ft_lib.h"
 
 static unsigned int	count_words(char *str, char div)
 {

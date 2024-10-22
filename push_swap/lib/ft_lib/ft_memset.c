@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rreverse.c                                         :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdel-giu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/01 21:29:15 by gdel-giu          #+#    #+#             */
-/*   Updated: 2022/03/01 21:29:17 by gdel-giu         ###   ########.fr       */
+/*   Created: 2022/01/10 15:02:43 by gdel-giu          #+#    #+#             */
+/*   Updated: 2022/01/22 14:26:23 by gdel-giu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ps_lib.h"
+#include "ft_lib.h"
 
-void    rreverse(void *stack)
+void	*ft_memset(void *b, int c, int len)
 {
-    stack = (void *) stack;
-    return ;
-}
+	char	*byte;
 
+	byte = b;
+	while (len-- > 0)
+		*byte++ = (char) c;
+	return (b);
+}

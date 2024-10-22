@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_manager.h                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdel-giu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/03 20:56:07 by gdel-giu          #+#    #+#             */
-/*   Updated: 2022/03/03 20:56:12 by gdel-giu         ###   ########.fr       */
+/*   Created: 2022/01/10 14:42:12 by gdel-giu          #+#    #+#             */
+/*   Updated: 2022/02/09 02:34:30 by gdel-giu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_lib.h"
 
-#ifndef STACK_MANAGER_H
-# define STACK_MANAGER_H
+int	ft_strlen(char *str)
+{
+	int	i;
 
-# include "ps_lib.h"
-
-void	create_stacks(t_stack **s_a, t_stack **s_b, char **params, int p_len);
-void    to_first(t_stack **stack);
-void    to_last(t_stack **stack);
-
-#endif
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}

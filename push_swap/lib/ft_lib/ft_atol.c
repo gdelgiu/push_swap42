@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "ft_lib.h"
 
 static int	in_range(int x, int a, int b)
 {
