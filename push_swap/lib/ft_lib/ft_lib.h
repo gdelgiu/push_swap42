@@ -4,6 +4,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+#include "commons/ft_commons.h"
+
 long	ft_atol(const char *str);
 void	ft_bzero(void *s, int n);
 void	*ft_calloc(int count, int size);
