@@ -1,4 +1,4 @@
-#include "ft_commons.h"
+#include "libft.h"
 
 int ft_isprint(int c)
 {

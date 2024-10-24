@@ -10,12 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_commons.h"
+#include "libft.h"
 
-static t_size check_terminator(t_int64 longword, const char *str) 
+static unsigned long int fillbytes(int byte) 
 {
-	const char *cp;
-	t_size i;
+	return (0x0101010101010101 * byte);
+}
+
+static t_size check_terminator(long int longword, const char *str)
+{
+	const char	*cp;
+	t_size	i;
 
 	cp = (char *) &longword;
 	i = 0;
@@ -29,15 +34,15 @@ static t_size check_terminator(t_int64 longword, const char *str)
 }
 
 
-static t_size fast_strlen(t_int64 *i_ptr, const char *str)
+static t_size fast_strlen(long int *i_ptr, const char *str)
 {
-	t_int64 himagic;
-	t_int64 lomagic;
-	t_int64 longword;
-	t_size size;
+	t_size	size;
+	long int	himagic;
+	long int	lomagic;
+	long int	longword;
 
-	himagic = ft_fillbytes(0x80);
-	lomagic = ft_fillbytes(0x01);
+	himagic = fillbytes(0x80);
+	lomagic = fillbytes(0x01);
 	while (1)
 	{
 		longword = *i_ptr++;
@@ -52,16 +57,16 @@ static t_size fast_strlen(t_int64 *i_ptr, const char *str)
 
 t_size	ft_strlen(const char *str)
 {
-	char *c_ptr;
+	char	*c_ptr;
 
 	if (str == NULL)
 		return (0);
 	c_ptr = str;
-	while (((t_int64)c_ptr & (sizeof(t_int64) - 1)) != 0)
+	while (((long int)c_ptr & (sizeof(long int) - 1)) != 0)
 	{
 		if (!*c_ptr)
 			return ((t_size) (c_ptr - str));
 		c_ptr++;
 	}
-	return (fast_strlen((t_int64*)c_ptr, str));
+	return (fast_strlen((long int *)c_ptr, str));
 }
